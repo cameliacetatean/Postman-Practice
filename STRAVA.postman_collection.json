@@ -1,0 +1,250 @@
+{
+	"info": {
+		"_postman_id": "e7e36fd2-e7fc-4cc6-a10e-e6f538fbee04",
+		"name": "STRAVA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33852896"
+	},
+	"item": [
+		{
+			"name": "Get Authenticated Athlete",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.strava.com/api/v3/athlete",
+					"protocol": "https",
+					"host": [
+						"www",
+						"strava",
+						"com"
+					],
+					"path": [
+						"api",
+						"v3",
+						"athlete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Explore segments",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.strava.com/api/v3/segments/explore?bounds=[southwest corner latitutde, southwest corner longitude, northeast corner latitude, northeast corner longitude]&activity_type=running&min_cat=1&max_cat=4",
+					"protocol": "https",
+					"host": [
+						"www",
+						"strava",
+						"com"
+					],
+					"path": [
+						"api",
+						"v3",
+						"segments",
+						"explore"
+					],
+					"query": [
+						{
+							"key": "bounds",
+							"value": "[southwest corner latitutde, southwest corner longitude, northeast corner latitude, northeast corner longitude]"
+						},
+						{
+							"key": "activity_type",
+							"value": "running"
+						},
+						{
+							"key": "min_cat",
+							"value": "1"
+						},
+						{
+							"key": "max_cat",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Starred Segments",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.strava.com/api/v3/segments/starred?page=2&per_page=10",
+					"protocol": "https",
+					"host": [
+						"www",
+						"strava",
+						"com"
+					],
+					"path": [
+						"api",
+						"v3",
+						"segments",
+						"starred"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						},
+						{
+							"key": "per_page",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Segment",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.strava.com/api/v3/segments/229781",
+					"protocol": "https",
+					"host": [
+						"www",
+						"strava",
+						"com"
+					],
+					"path": [
+						"api",
+						"v3",
+						"segments",
+						"229781"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Star Segment",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "https://www.strava.com/api/v3/segments/{229781}/starred",
+					"protocol": "https",
+					"host": [
+						"www",
+						"strava",
+						"com"
+					],
+					"path": [
+						"api",
+						"v3",
+						"segments",
+						"{229781}",
+						"starred"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "refresh token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://www.strava.com/oauth/token?grant_type=refresh_token&client_id=125388&client_secret=4d40dc3461a593dca6581c1ac5ee5bee2dbbefb8&grant_type=refresh_token&refresh_token=e2d399744713534dce1f10e3504ccec44fc2d925&scope=activity:write",
+					"protocol": "https",
+					"host": [
+						"www",
+						"strava",
+						"com"
+					],
+					"path": [
+						"oauth",
+						"token"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "refresh_token"
+						},
+						{
+							"key": "client_id",
+							"value": "125388"
+						},
+						{
+							"key": "client_secret",
+							"value": "4d40dc3461a593dca6581c1ac5ee5bee2dbbefb8"
+						},
+						{
+							"key": "grant_type",
+							"value": "refresh_token"
+						},
+						{
+							"key": "refresh_token",
+							"value": "e2d399744713534dce1f10e3504ccec44fc2d925"
+						},
+						{
+							"key": "scope",
+							"value": "activity:write"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
